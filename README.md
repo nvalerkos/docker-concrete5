@@ -6,14 +6,14 @@
 
 	docker build . -t concrete5
 
-## Automatically adding source code
-> First install include the INIT_CONCRETE5=true as ENV to extract the concrete5 source code to /app/
+## Automatically adding source code by default
+> First install extracts the concrete5 source code to /app/
 
-	docker run -p "80:80" -e INIT_CONCRETE5=true -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql --name project_name_goes_here  nvalerkos/concrete5
-
-## Otherwise:
-	
 	docker run -p "80:80" -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql   --name project_name_goes_here nvalerkos/concrete5
+
+## Otherwise include the DO_NOT_INIT_CONCRETE5=true as ENV:
+	
+	docker run -p "80:80" -e DO_NOT_INIT_CONCRETE5=true -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql --name project_name_goes_here  nvalerkos/concrete5
 
 ## Stop it:
 

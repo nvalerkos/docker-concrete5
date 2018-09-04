@@ -2,11 +2,11 @@
 
 VOLUME_HOME="/var/lib/mysql"
 
-if [ -n "$INIT_CONCRETE5" ]; then
-    echo 'Adding Concrete5 Source code to /app'
-    mv /concrete5-8.4.2/* /app/.
+if [ -n "$DO_NOT_INIT_CONCRETE5" ]; then
+    echo 'Skipping extracting of code to /app/'
 else
-    echo 'If you want to add source code, please add "INIT_CONCRETE5" variable to true.'
+    echo 'Adding Concrete5 Source code to /app, if you do not want to, include DO_NOT_INIT_CONCRETE5 as env'
+    mv /concrete5-8.4.2/* /app/.
 fi
 
 if [ -e /etc/php/5.6/apache2/php.ini ]
