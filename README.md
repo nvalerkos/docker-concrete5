@@ -2,9 +2,12 @@
 > Based on https://hub.docker.com/r/mattrayner/lamp/
 
 
-## To Build image:
+## To Build image locally:
 
 	docker build . -t concrete5
+
+Otherwise see 
+https://hub.docker.com/r/nvalerkos/concrete5/
 
 ## Automatically adding source code by default
 > First install extracts the concrete5 source code to /app/
