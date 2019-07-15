@@ -71,9 +71,9 @@ ADD files/apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 # Configure /app folder with concrete5
-RUN wget -O /tmp/concrete5-8.4.2.zip https://core-releases.s3-us-west-2.amazonaws.com/5415/3376/3046/concrete5-8.4.2.zip
+RUN wget -O /tmp/concrete5-8.5.1.zip https://www.concrete5.org/download_file/-/view/109615/
 WORKDIR /
-RUN unzip /tmp/concrete5-8.4.2.zip
+RUN unzip /tmp/concrete5-8.5.1.zip
 RUN rm -fr /var/www/html && ln -s /app /var/www/html
 
 #Environment variables to configure php
